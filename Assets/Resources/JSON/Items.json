@@ -3,39 +3,147 @@
     "objectSlug": "sword",
     "itemName": "Sword",
     "description": "A long, sharp blade.",
-    "itemType": "Weapon",
+    "itemType": "Gear",
+    "ItemObject": "Weapon",
+	"GearTypes": "Sword",
     "actionName": "Equip",
-    "itemModifier": 0,
+    "IsStackable": 0,
     "BaseStats": [
       {
-        "StatType": "Power",
-        "BaseValue": 25,
-        "StatName": "Power"
+        "StatType": "MinDamage",
+        "BaseValue": 5,
+        "StatName": "Min Dmg"
+      },
+      {
+        "StatType": "MaxDamage",
+        "BaseValue": 10,
+        "StatName": "Max Dmg"
       },
       {
         "StatType": "AttackSpeed",
-        "BaseValue": 4,
+        "BaseValue": 10,
         "StatName": "Atk Spd"
+      },
+      {
+        "StatType": "Power",
+        "BaseValue": 10,
+        "StatName": "Power"
+      },
+      {
+        "StatType": "Vitality",
+        "BaseValue": 5,
+        "StatName": "Vit"
+      },
+      {
+        "StatType": "Intelligence",
+        "BaseValue": 5,
+        "StatName": "Int"
       }
-    ]
+    ],
+    "BaseSuffixStats": [
+      {
+        "StatType": "MinDamage",
+        "BaseValue": 1,
+        "StatName": "Min Dmg"
+      },
+      {
+        "StatType": "MaxDamage",
+        "BaseValue": 2,
+        "StatName": "Max Dmg"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "BaseValue": 2,
+        "StatName": "Atk Spd"
+      },
+      {
+        "StatType": "Power",
+        "BaseValue": 2,
+        "StatName": "Power"
+      },
+      {
+        "StatType": "Vitality",
+        "BaseValue": 1,
+        "StatName": "Vit"
+      },
+      {
+        "StatType": "Intelligence",
+        "BaseValue": 1,
+        "StatName": "Int"
+      }
+	]
   },
   {
     "objectSlug": "staff",
     "itemName": "Cactus",
     "description": "A long, sharp cactus.",
-    "itemType":  "Weapon",
+    "itemType": "Gear",
+    "ItemObject": "Weapon",
+	"GearTypes": "Staff",
     "actionName": "Equip",
-    "itemModifier": 0,
+    "IsStackable": 0,
     "BaseStats": [
       {
-        "StatType":  "Power",
-        "BaseValue": 800,
+        "StatType": "MinDamage",
+        "BaseValue": 5,
+        "StatName": "Min Dmg"
+      },
+      {
+        "StatType": "MaxDamage",
+        "BaseValue": 10,
+        "StatName": "Max Dmg"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "BaseValue": 10,
+        "StatName": "Atk Spd"
+      },
+      {
+        "StatType": "Power",
+        "BaseValue": 10,
         "StatName": "Power"
       },
       {
-        "StatType":  "AttackSpeed",
+        "StatType": "Vitality",
+        "BaseValue": 5,
+        "StatName": "Vit"
+      },
+      {
+        "StatType": "Intelligence",
+        "BaseValue": 5,
+        "StatName": "Int"
+      }
+    ],
+    "BaseSuffixStats": [
+      {
+        "StatType": "MinDamage",
         "BaseValue": 1,
+        "StatName": "Min Dmg"
+      },
+      {
+        "StatType": "MaxDamage",
+        "BaseValue": 2,
+        "StatName": "Max Dmg"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "BaseValue": 2,
         "StatName": "Atk Spd"
+      },
+      {
+        "StatType": "Power",
+        "BaseValue": 2,
+        "StatName": "Power"
+      },
+      {
+        "StatType": "Vitality",
+        "BaseValue": 1,
+        "StatName": "Vit"
+      },
+      {
+        "StatType": "Intelligence",
+        "BaseValue": 1,
+        "StatName": "Int"
       }
     ]
   },
@@ -45,6 +153,598 @@
     "description": "A potion that logs something to the console.",
     "itemType": "Consumable",
     "actionName": "Drink",
-    "itemModifier": 0
+    "IsStackable": 1
+  },
+  {
+    "objectSlug": "sword",
+    "itemName": "Crossbow",
+    "description": "A long, sharp blade.",
+    "itemType": "Gear",
+    "ItemObject": "Weapon",
+	"GearTypes": "Crossbow",
+    "actionName": "Equip",
+    "IsStackable": 0,
+    "BaseStats": [
+      {
+        "StatType": "MinDamage",
+        "BaseValue": 5,
+        "StatName": "Min Dmg"
+      },
+      {
+        "StatType": "MaxDamage",
+        "BaseValue": 10,
+        "StatName": "Max Dmg"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "BaseValue": 10,
+        "StatName": "Atk Spd"
+      },
+      {
+        "StatType": "Power",
+        "BaseValue": 10,
+        "StatName": "Power"
+      },
+      {
+        "StatType": "Vitality",
+        "BaseValue": 5,
+        "StatName": "Vit"
+      },
+      {
+        "StatType": "Intelligence",
+        "BaseValue": 5,
+        "StatName": "Int"
+      }
+    ],
+    "BaseSuffixStats": [
+      {
+        "StatType": "MinDamage",
+        "BaseValue": 1,
+        "StatName": "Min Dmg"
+      },
+      {
+        "StatType": "MaxDamage",
+        "BaseValue": 2,
+        "StatName": "Max Dmg"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "BaseValue": 2,
+        "StatName": "Atk Spd"
+      },
+      {
+        "StatType": "Power",
+        "BaseValue": 2,
+        "StatName": "Power"
+      },
+      {
+        "StatType": "Vitality",
+        "BaseValue": 1,
+        "StatName": "Vit"
+      },
+      {
+        "StatType": "Intelligence",
+        "BaseValue": 1,
+        "StatName": "Int"
+      }
+	]
+  },
+  {
+    "objectSlug": "sword",
+    "itemName": "Ring",
+    "description": "A long, sharp blade.",
+    "itemType": "Gear",
+    "ItemObject": "Jewelery",
+	"GearTypes": "Ring",
+    "actionName": "Equip",
+    "IsStackable": 0,
+    "BaseStats": [
+      {
+        "StatType": "MinDamage",
+        "BaseValue": 5,
+        "StatName": "Min Dmg"
+      },
+      {
+        "StatType": "MaxDamage",
+        "BaseValue": 10,
+        "StatName": "Max Dmg"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "BaseValue": 10,
+        "StatName": "Atk Spd"
+      },
+      {
+        "StatType": "Power",
+        "BaseValue": 10,
+        "StatName": "Power"
+      },
+      {
+        "StatType": "Vitality",
+        "BaseValue": 5,
+        "StatName": "Vit"
+      },
+      {
+        "StatType": "Intelligence",
+        "BaseValue": 5,
+        "StatName": "Int"
+      }
+    ],
+    "BaseSuffixStats": [
+      {
+        "StatType": "MinDamage",
+        "BaseValue": 1,
+        "StatName": "Min Dmg"
+      },
+      {
+        "StatType": "MaxDamage",
+        "BaseValue": 2,
+        "StatName": "Max Dmg"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "BaseValue": 2,
+        "StatName": "Atk Spd"
+      },
+      {
+        "StatType": "Power",
+        "BaseValue": 2,
+        "StatName": "Power"
+      },
+      {
+        "StatType": "Vitality",
+        "BaseValue": 1,
+        "StatName": "Vit"
+      },
+      {
+        "StatType": "Intelligence",
+        "BaseValue": 1,
+        "StatName": "Int"
+      }
+	]
+  },
+  {
+    "objectSlug": "sword",
+    "itemName": "Amulett",
+    "description": "A long, sharp blade.",
+    "itemType": "Gear",
+    "ItemObject": "Jewelery",
+	"GearTypes": "Amulett",
+    "actionName": "Equip",
+    "IsStackable": 0,
+    "BaseStats": [
+      {
+        "StatType": "MinDamage",
+        "BaseValue": 5,
+        "StatName": "Min Dmg"
+      },
+      {
+        "StatType": "MaxDamage",
+        "BaseValue": 10,
+        "StatName": "Max Dmg"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "BaseValue": 10,
+        "StatName": "Atk Spd"
+      },
+      {
+        "StatType": "Power",
+        "BaseValue": 10,
+        "StatName": "Power"
+      },
+      {
+        "StatType": "Vitality",
+        "BaseValue": 5,
+        "StatName": "Vit"
+      },
+      {
+        "StatType": "Intelligence",
+        "BaseValue": 5,
+        "StatName": "Int"
+      }
+    ],
+    "BaseSuffixStats": [
+      {
+        "StatType": "MinDamage",
+        "BaseValue": 1,
+        "StatName": "Min Dmg"
+      },
+      {
+        "StatType": "MaxDamage",
+        "BaseValue": 2,
+        "StatName": "Max Dmg"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "BaseValue": 2,
+        "StatName": "Atk Spd"
+      },
+      {
+        "StatType": "Power",
+        "BaseValue": 2,
+        "StatName": "Power"
+      },
+      {
+        "StatType": "Vitality",
+        "BaseValue": 1,
+        "StatName": "Vit"
+      },
+      {
+        "StatType": "Intelligence",
+        "BaseValue": 1,
+        "StatName": "Int"
+      }
+	]
+  },
+  {
+    "objectSlug": "sword",
+    "itemName": "Helmet",
+    "description": "A long, sharp blade.",
+    "itemType": "Gear",
+    "ItemObject": "Armor",
+	"GearTypes": "Helmet",
+    "actionName": "Equip",
+    "IsStackable": 0,
+    "BaseStats": [
+      {
+        "StatType": "MinDamage",
+        "BaseValue": 5,
+        "StatName": "Min Dmg"
+      },
+      {
+        "StatType": "MaxDamage",
+        "BaseValue": 10,
+        "StatName": "Max Dmg"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "BaseValue": 10,
+        "StatName": "Atk Spd"
+      },
+      {
+        "StatType": "Power",
+        "BaseValue": 10,
+        "StatName": "Power"
+      },
+      {
+        "StatType": "Vitality",
+        "BaseValue": 5,
+        "StatName": "Vit"
+      },
+      {
+        "StatType": "Intelligence",
+        "BaseValue": 5,
+        "StatName": "Int"
+      }
+    ],
+    "BaseSuffixStats": [
+      {
+        "StatType": "MinDamage",
+        "BaseValue": 1,
+        "StatName": "Min Dmg"
+      },
+      {
+        "StatType": "MaxDamage",
+        "BaseValue": 2,
+        "StatName": "Max Dmg"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "BaseValue": 2,
+        "StatName": "Atk Spd"
+      },
+      {
+        "StatType": "Power",
+        "BaseValue": 2,
+        "StatName": "Power"
+      },
+      {
+        "StatType": "Vitality",
+        "BaseValue": 1,
+        "StatName": "Vit"
+      },
+      {
+        "StatType": "Intelligence",
+        "BaseValue": 1,
+        "StatName": "Int"
+      }
+	]
+  },
+  {
+    "objectSlug": "sword",
+    "itemName": "Armor",
+    "description": "A long, sharp blade.",
+    "itemType": "Gear",
+    "ItemObject": "Armor",
+	"GearTypes": "Armor",
+    "actionName": "Equip",
+    "IsStackable": 0,
+    "BaseStats": [
+      {
+        "StatType": "MinDamage",
+        "BaseValue": 5,
+        "StatName": "Min Dmg"
+      },
+      {
+        "StatType": "MaxDamage",
+        "BaseValue": 10,
+        "StatName": "Max Dmg"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "BaseValue": 10,
+        "StatName": "Atk Spd"
+      },
+      {
+        "StatType": "Power",
+        "BaseValue": 10,
+        "StatName": "Power"
+      },
+      {
+        "StatType": "Vitality",
+        "BaseValue": 5,
+        "StatName": "Vit"
+      },
+      {
+        "StatType": "Intelligence",
+        "BaseValue": 5,
+        "StatName": "Int"
+      }
+    ],
+    "BaseSuffixStats": [
+      {
+        "StatType": "MinDamage",
+        "BaseValue": 1,
+        "StatName": "Min Dmg"
+      },
+      {
+        "StatType": "MaxDamage",
+        "BaseValue": 2,
+        "StatName": "Max Dmg"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "BaseValue": 2,
+        "StatName": "Atk Spd"
+      },
+      {
+        "StatType": "Power",
+        "BaseValue": 2,
+        "StatName": "Power"
+      },
+      {
+        "StatType": "Vitality",
+        "BaseValue": 1,
+        "StatName": "Vit"
+      },
+      {
+        "StatType": "Intelligence",
+        "BaseValue": 1,
+        "StatName": "Int"
+      }
+	]
+  },
+  {
+    "objectSlug": "sword",
+    "itemName": "Gloves",
+    "description": "A long, sharp blade.",
+    "itemType": "Gear",
+    "ItemObject": "Armor",
+	"GearTypes": "Gloves",
+    "actionName": "Equip",
+    "IsStackable": 0,
+    "BaseStats": [
+      {
+        "StatType": "MinDamage",
+        "BaseValue": 5,
+        "StatName": "Min Dmg"
+      },
+      {
+        "StatType": "MaxDamage",
+        "BaseValue": 10,
+        "StatName": "Max Dmg"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "BaseValue": 10,
+        "StatName": "Atk Spd"
+      },
+      {
+        "StatType": "Power",
+        "BaseValue": 10,
+        "StatName": "Power"
+      },
+      {
+        "StatType": "Vitality",
+        "BaseValue": 5,
+        "StatName": "Vit"
+      },
+      {
+        "StatType": "Intelligence",
+        "BaseValue": 5,
+        "StatName": "Int"
+      }
+    ],
+    "BaseSuffixStats": [
+      {
+        "StatType": "MinDamage",
+        "BaseValue": 1,
+        "StatName": "Min Dmg"
+      },
+      {
+        "StatType": "MaxDamage",
+        "BaseValue": 2,
+        "StatName": "Max Dmg"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "BaseValue": 2,
+        "StatName": "Atk Spd"
+      },
+      {
+        "StatType": "Power",
+        "BaseValue": 2,
+        "StatName": "Power"
+      },
+      {
+        "StatType": "Vitality",
+        "BaseValue": 1,
+        "StatName": "Vit"
+      },
+      {
+        "StatType": "Intelligence",
+        "BaseValue": 1,
+        "StatName": "Int"
+      }
+	]
+  },
+  {
+    "objectSlug": "sword",
+    "itemName": "Pants",
+    "description": "A long, sharp blade.",
+    "itemType": "Gear",
+    "ItemObject": "Armor",
+	"GearTypes": "Pants",
+    "actionName": "Equip",
+    "IsStackable": 0,
+    "BaseStats": [
+      {
+        "StatType": "MinDamage",
+        "BaseValue": 5,
+        "StatName": "Min Dmg"
+      },
+      {
+        "StatType": "MaxDamage",
+        "BaseValue": 10,
+        "StatName": "Max Dmg"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "BaseValue": 10,
+        "StatName": "Atk Spd"
+      },
+      {
+        "StatType": "Power",
+        "BaseValue": 10,
+        "StatName": "Power"
+      },
+      {
+        "StatType": "Vitality",
+        "BaseValue": 5,
+        "StatName": "Vit"
+      },
+      {
+        "StatType": "Intelligence",
+        "BaseValue": 5,
+        "StatName": "Int"
+      }
+    ],
+    "BaseSuffixStats": [
+      {
+        "StatType": "MinDamage",
+        "BaseValue": 1,
+        "StatName": "Min Dmg"
+      },
+      {
+        "StatType": "MaxDamage",
+        "BaseValue": 2,
+        "StatName": "Max Dmg"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "BaseValue": 2,
+        "StatName": "Atk Spd"
+      },
+      {
+        "StatType": "Power",
+        "BaseValue": 2,
+        "StatName": "Power"
+      },
+      {
+        "StatType": "Vitality",
+        "BaseValue": 1,
+        "StatName": "Vit"
+      },
+      {
+        "StatType": "Intelligence",
+        "BaseValue": 1,
+        "StatName": "Int"
+      }
+	]
+  },
+  {
+    "objectSlug": "sword",
+    "itemName": "Shoes",
+    "description": "A long, sharp blade.",
+    "itemType": "Gear",
+    "ItemObject": "Armor",
+	"GearTypes": "Shoes",
+    "actionName": "Equip",
+    "IsStackable": 0,
+    "BaseStats": [
+      {
+        "StatType": "MinDamage",
+        "BaseValue": 5,
+        "StatName": "Min Dmg"
+      },
+      {
+        "StatType": "MaxDamage",
+        "BaseValue": 10,
+        "StatName": "Max Dmg"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "BaseValue": 10,
+        "StatName": "Atk Spd"
+      },
+      {
+        "StatType": "Power",
+        "BaseValue": 10,
+        "StatName": "Power"
+      },
+      {
+        "StatType": "Vitality",
+        "BaseValue": 5,
+        "StatName": "Vit"
+      },
+      {
+        "StatType": "Intelligence",
+        "BaseValue": 5,
+        "StatName": "Int"
+      }
+    ],
+    "BaseSuffixStats": [
+      {
+        "StatType": "MinDamage",
+        "BaseValue": 1,
+        "StatName": "Min Dmg"
+      },
+      {
+        "StatType": "MaxDamage",
+        "BaseValue": 2,
+        "StatName": "Max Dmg"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "BaseValue": 2,
+        "StatName": "Atk Spd"
+      },
+      {
+        "StatType": "Power",
+        "BaseValue": 2,
+        "StatName": "Power"
+      },
+      {
+        "StatType": "Vitality",
+        "BaseValue": 1,
+        "StatName": "Vit"
+      },
+      {
+        "StatType": "Intelligence",
+        "BaseValue": 1,
+        "StatName": "Int"
+      }
+	]
   }
 ]

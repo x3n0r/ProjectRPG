@@ -44,7 +44,7 @@ public class InventoryUIDetails : MonoBehaviour {
             InventoryController.Instance.ConsumeItem(item);
             Destroy(selectedItemButton.gameObject);
         }
-        else if (item.ItemType == Item.ItemTypes.Weapon)
+        else if (item.ItemType == Item.ItemTypes.Gear)
         {
             InventoryController.Instance.EquipItem(item);
             Destroy(selectedItemButton.gameObject);

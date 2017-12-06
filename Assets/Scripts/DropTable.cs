@@ -29,17 +29,9 @@ public class DropTable
                     var RolledGearType = Item.itemToGearTypes[type][Random.Range(0, Item.itemToGearTypes[type].Count)];
 
                     //Get Some Stuff From Item "Database" (e.g. obect_slug)
-                    Item NowRolledItem = ItemDatabase.Instance.GetItem(RolledGearType);
-                    
-                    //Set already Rolled variables
-                    NowRolledItem.ItemObject = RolledItemObject;
-                    NowRolledItem.ItemType = RolledItemType;
+                    Item NowGotItem = ItemDatabase.Instance.GetItem(RolledGearType);
 
                     //Rolling Rarity
-                    //Item.Rarities[] Irar = (Item.Rarities[])System.Enum.GetValues(typeof(Item.Rarities));
-                    //NowRolledItem.Rarity = Irar[Random.Range(0, Irar.Length)];
-
-
                     ItemRarity = new RareTable();
                     ItemRarity.rarloot = new List<RarityDrop>
                     {
@@ -49,42 +41,84 @@ public class DropTable
                         new RarityDrop(Item.Rarities.Legendary, 5),
                     };
 
-                    var rolledrar = ItemRarity.GetRarityDrop();
-                    NowRolledItem.Rarity = rolledrar;
+                    var RolledRarity = ItemRarity.GetRarityDrop();
 
+                    //ItemLevel rewriting it to a curve 
+                    //TODO
+                    PlayerLevel PlayerLevel = new PlayerLevel();
+                    int PlayerLvl = PlayerLevel.Level;
+                    Debug.Log("Player LEVEL: " + PlayerLvl);
+                    int RolledItemLevel = Random.Range(PlayerLvl - 3, PlayerLvl + 3);
 
-                        //int rarroll = Random.Range(0, 101);
-                        //foreach (RarityDrop rardrop in ItemRarity)
-                        //{
-                        //    weightSum += rardrop.Weight;
-                        //    if (roll < weightSum)
-                        //    {
+                    //get min max suffix and roll rnd amount of suffixes
+                    KeyValuePair<int,int> minmaxsuffix = GetSuffixForRarity(RolledRarity);
+                    int minsuffix = minmaxsuffix.Key;
+                    int maxsuffix = minmaxsuffix.Value;
+                    int rolledSuffixAmount = Random.Range(minsuffix, maxsuffix);
+                    List<BaseStat> RolledSuffixStats = new List<BaseStat>();
+                    BaseStat.BaseStatType[] allBaseStatTypes = (BaseStat.BaseStatType[])System.Enum.GetValues(typeof(BaseStat.BaseStatType));
+                    for (int i = 1; i <= rolledSuffixAmount; i++)
+                    {
+                        BaseStat.BaseStatType BaseStatType = allBaseStatTypes[Random.Range(0, allBaseStatTypes.Length)];
 
-                        //        break;
-                        //    }
-                        //}
-                        //
+                        int rolledBaseStatValue = 0;
+                        foreach (BaseStat a in NowGotItem.BaseSuffixStats)
+                        {
+                            
+                            if (a.StatType == BaseStatType)
+                                rolledBaseStatValue = GetCalculatedMath(a.BaseValue, RolledItemLevel);
+                        }
+                        
+                        BaseStat rolledBaseStat = new BaseStat(BaseStatType, rolledBaseStatValue, "");
+                        RolledSuffixStats.Add(rolledBaseStat);
+                    }
 
-                        //
+                    List<BaseStat> CalculatedBaseStats = new List<BaseStat>();
+                    foreach (BaseStat a in NowGotItem.BaseSuffixStats)
+                    {
+                        int calulatedBaseStatValue = GetCalculatedMath(a.BaseValue, RolledItemLevel);
+                        BaseStat rolledBaseStat = new BaseStat(a.StatType, calulatedBaseStatValue, a.StatDescription);
+                        CalculatedBaseStats.Add(rolledBaseStat);
+                    }
 
-                        // (USERTYPE[])Enum.GetValues(typeof(USERTYPE));
-                        //Enum.GetValues(typeof(USERTYPE)).Cast<USERTYPE>().ToList();
+                    //Get Some Stuff From Item "Database" (e.g. obect_slug)
+                    Item NowRolledItem = new Item(
+                        RolledItemType, RolledItemObject, RolledGearType, RolledRarity, 
+                        CalculatedBaseStats, new List<BaseStat>(), RolledSuffixStats, RolledItemLevel, 
+                        NowGotItem.ObjectSlug, NowGotItem.Description, NowGotItem.ActionName, 
+                        NowGotItem.ItemName, NowGotItem.IsStackable
+                        );
+                    DropItems.Add(NowRolledItem);
                     break;
-                    //Item a = ItemDatabase.Instance.GetItem(drop.ItemSlug);
-                    //a.Rarity = Item.Rarities.Normal;
-                    //return DropItems.Add(ItemDatabase.Instance.GetItem(drop.ItemSlug));
                 }
             }
         }
         return DropItems;
     }
-}
 
-public boundslow, boundsmax GetSuffixForRarity(Item.Rarities rarity)
-{
-    var list = new List<System.Tuple<int, int>>();
+    // boundsmin, boundsmax 
+    public KeyValuePair<int, int> GetSuffixForRarity(Item.Rarities rarity)
+    {
+        if (rarity == Item.Rarities.Magic)
+            return new KeyValuePair<int, int>(1, 3);
+        else if (rarity == Item.Rarities.Rare)
+            return new KeyValuePair<int, int>(2, 4);
+        else if (rarity == Item.Rarities.Legendary)
+            return new KeyValuePair<int, int>(3, 5);
+        else //(rarity == Item.Rarities.Common)
+            return new KeyValuePair<int, int>(1, 1);
+    }
 
-
+    public int GetCalculatedMath(int BaseSuffixValue, int ItemLevel )
+    {
+        //Value* round((Itemlevel+Stage)/ 2)) *rand[0.8, 1.2]
+        //
+        DungeonStage dungeonStage = new DungeonStage();
+        int DungeonLevel = dungeonStage.StageLevel;
+        float RND = Random.Range((float)0.8, (float)1.1);
+        float b = (float)(BaseSuffixValue * ((ItemLevel + DungeonLevel) / 2)) * RND;
+        return (int) b;
+    }
 }
 
 public class RareTable

@@ -27,6 +27,7 @@ public class WorldInteraction : MonoBehaviour {
             GameObject interactedObject = interactionInfo.collider.gameObject;
             if (interactedObject.tag == "Enemy")
             {
+                Sword sword = new Sword();
                 Debug.Log("move to enemy");
                 interactedObject.GetComponent<Interactable>().MoveToInteraction(playerAgent);
             }

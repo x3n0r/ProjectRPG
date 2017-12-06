@@ -17,10 +17,10 @@ public class ItemDatabase : MonoBehaviour {
     private void BuildDatabase()
     {
         Items = JsonConvert.DeserializeObject<List<Item>>(Resources.Load<TextAsset>("JSON/Items").ToString());
-        Debug.Log(Items[1].ItemName + " is a " + Items[1].ItemType.ToString());
         foreach(Item i in Items)
         {
-            Debug.Log(i.ItemName + " is a " + i.ItemType.ToString());
+            if (i.ItemType != Item.ItemTypes.Consumable)
+                Debug.Log(i.ItemName + " is a " + i.BaseSuffixStats[5].StatType);
         }
     }
 

@@ -17,13 +17,13 @@ public class BaseStat
     public string StatDescription { get; set; }
     public int FinalValue { get; set; }
 
-    public BaseStat(int baseValue, string statName, string statDescription)
-    {
-        this.BaseAdditives = new List<StatBonus>();
-        this.BaseValue = baseValue;
-        this.StatName = statName;
-        this.StatDescription = statDescription;
-    }
+    //public BaseStat(int baseValue, string statName, string statDescription)
+    //{
+    //    this.BaseAdditives = new List<StatBonus>();
+    //    this.BaseValue = baseValue;
+    //    this.StatName = statName;
+    //    this.StatDescription = statDescription;
+    //}
 
     [Newtonsoft.Json.JsonConstructor]
     public BaseStat(BaseStatType statType, int baseValue, string statName)

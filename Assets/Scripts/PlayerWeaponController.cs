@@ -33,8 +33,8 @@ public class PlayerWeaponController : MonoBehaviour {
         equippedWeapon.Stats = itemToEquip.BaseStats;
         currentlyEquippedItem = itemToEquip;
         characterStats.AddStatBonus(itemToEquip.BaseStats);
-        if (itemToEquip.BaseRNDStats != null)
-            characterStats.AddStatBonus(itemToEquip.BaseRNDStats);
+        if (itemToEquip.RndSuffixStats != null)
+            characterStats.AddStatBonus(itemToEquip.RndSuffixStats);
         UIEventHandler.ItemEquipped(itemToEquip);
         UIEventHandler.StatsChanged();
     }
@@ -43,7 +43,8 @@ public class PlayerWeaponController : MonoBehaviour {
     {
         InventoryController.Instance.GiveItem(currentlyEquippedItem.ObjectSlug);
         characterStats.RemoveStatBonus(currentlyEquippedItem.BaseStats);
-        characterStats.RemoveStatBonus(currentlyEquippedItem.BaseRNDStats);
+        if (currentlyEquippedItem.RndSuffixStats != null)
+            characterStats.RemoveStatBonus(currentlyEquippedItem.RndSuffixStats);
         Destroy(EquippedWeapon.transform.gameObject);
         UIEventHandler.StatsChanged();
     }

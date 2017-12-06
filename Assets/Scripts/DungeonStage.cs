@@ -17,4 +17,9 @@ public class DungeonStage : MonoBehaviour
         StageLevel += amount;
         UIEventHandler.DungeonLevelChanged(StageLevel);
     }
+
+    public int GetDungeonLevel()
+    {
+        return StageLevel;
+    }
 }
