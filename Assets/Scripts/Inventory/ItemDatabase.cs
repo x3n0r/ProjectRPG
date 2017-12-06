@@ -34,4 +34,15 @@ public class ItemDatabase : MonoBehaviour {
         Debug.LogWarning("Couldn't find item: " + itemSlug);
         return null;
     }
+
+    public Item GetItem(Item.GearTypes gearType)
+    {
+        foreach (Item item in Items)
+        {
+            if (item.GearType == gearType)
+                return item;
+        }
+        Debug.LogWarning("Couldn't find item: " + gearType);
+        return null;
+    }
 }

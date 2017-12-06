@@ -24,9 +24,9 @@ public class Slime : Interactable, IEnemy
         DropTable = new DropTable();
         DropTable.loot = new List<LootDrop>
         {
-            new LootDrop("sword", 25),
-            new LootDrop("staff", 25),
-            new LootDrop("potion_log", 25)
+            new LootDrop(Item.ItemObjects.Jewelery, 25),
+            new LootDrop(Item.ItemObjects.Armor, 25),
+            new LootDrop(Item.ItemObjects.Weapon, 25)
         };
 
         ID = 0;
@@ -82,11 +82,14 @@ public class Slime : Interactable, IEnemy
 
     void DropLoot()
     {
-        Item item = DropTable.GetDrop();
-        if (item != null)
+        List<Item> items = DropTable.GetEquipDrop(1);
+        if (items != null)
         {
-            PickupItem instance = Instantiate(pickupItem, transform.position, Quaternion.identity);
-            instance.ItemDrop = item;
+            foreach (Item item in items)
+            {
+                PickupItem instance = Instantiate(pickupItem, transform.position, Quaternion.identity);
+                instance.ItemDrop = item;
+            }
         }
     }
 }
